@@ -1,0 +1,64 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 500px;
+        }
+        h1 {
+            color: #343a40;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-control {
+            border-radius: 20px;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            border-radius: 20px;
+            width: 100%;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><b>ADD STUDENT</h1></b>
+        <form method="POST" class="shadow p-4 bg-white rounded">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-custom mt-3">ADD</button>
+        </form>
+        <a href="{% url 'student_list' %}" class="back-link">Back to Student List</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
